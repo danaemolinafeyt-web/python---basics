@@ -4,4 +4,4 @@ This repository contains my Python practice, drills, and mini-projects as I buil
 
 ## Structure
 - `day1/` — Day 1 quiz (types, input, expressions) and notes.
-- `drills/` — Short practice scripts (f-strings, input conversion).
+- `day1_quiz` — Short practice scripts (f-strings, input conversion).
