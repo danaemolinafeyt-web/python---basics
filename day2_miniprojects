@@ -1,0 +1,148 @@
+Exercise 1. Overtime Pay
+Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.
+Enter Hours: 45
+Enter Rate: 10
+Pay: 475.0
+
+
+# Ex 1. Overtime Pay
+# Asks the user for hours worked. 
+# Asks for hourly rate
+# pays straight rate up to 40 hours.
+# Pays 1.5 x rate for hours above 40.
+
+hours = float(input("Enter Hours worked: "))
+rate = float(input("Enter Hourly Rate: "))
+
+# Step 1. Logic in plain english
+
+# if hours ≤ 40: pay = hours x rate
+# else: pay = (40 x rate) + ((hours - 40) x 1.5 x rate)
+
+# Translate into python
+
+if hours <= 40:       # for ≤ 40 -> it goes through the regular pay door (if)
+  pay = hours * rate
+
+else:                   # for > 40 hours -> it goes through the overtime door (else)
+  overtime = hours - 40
+  pay = (40 * rate) + (overtime * rate * 1.5)
+
+print("Pay:", pay)
+
+
+
+Exercise 2. Rewrite overtime pay
+Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following show stwo executions of the program.
+Enter hours: 20
+Enter rate: nine
+Error, please enter numeric input
+Enter Hours: forty
+Error, please enter numeric input
+
+# Ex 2. - Correct numeric input
+
+# Ask the user for hours and rate
+# if input is numeric -> calcualte pay (with overtime, if applicable)
+# if input is not numeric -> print "Error, please enter numeric input" and stop.
+
+# The try block = "attempt risky code."
+# The except block = "what to do if it fails."
+
+hours = input("Enter Hours: ")
+rate = input("Enter Rate: ")
+
+try:
+  hours = float(hours)
+  rate = float(rate)
+except:
+  print("Error, pelase enter numeric input")
+  quit()
+
+# Overtime calculation
+
+if hours <= 40:
+  pay = hours * rate
+
+else:
+  overtime = hours - 40
+  pay = (40 * rate) + (overtime * rate * 1.5)
+
+print("pay:", pay)
+
+# Ex 2. - Incorrect numeric input
+
+# Ask the user for hours and rate
+# if input is numeric -> calcualte pay (with overtime, if applicable)
+# if input is not numeric -> print "Error, please enter numeric input" and stop.
+
+# The try block = "attempt risky code."
+# The except block = "what to do if it fails."
+
+hours = input("Enter Hours: ")
+rate = input("Enter Rate: ")
+
+try:
+  hours = float(hours)
+  rate = float(rate)
+except:
+  print("Error, pelase enter numeric input")
+  quit()
+
+# Overtime calculation
+
+if hours <= 40:
+  pay = hours * rate
+
+else:
+  overtime = hours - 40
+  pay = (40 * rate) + (overtime * rate * 1.5)
+
+print("pay:", pay)
+
+
+xercise 3.
+Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:
+Score Grade
+>= 0.9 A
+>= 0.8 B
+>= 0.7 C
+>= 0.6 D
+< 0.6 F
+
+# Ex. 3
+# Prompts the user for a score.
+# If the input is not numeric -> print "Bad score."
+# If its is numeric but not between 0.0 and 1.0 -> print "Bad score."
+# Otherwise -> print a grade using the table.
+
+# step 2. Code
+
+score = input("Enter score:")
+
+try:                      # We use try & except in case the user inputs a word like "Perfect" rather than a numeric number. 
+  score = float(score)
+
+except:
+  print("Bad score")
+  quit()
+
+# This code is going to check if score is within the range. 
+
+if score < 0.0 or score > 1.0:        # We use or to check case 1 and 2. If the score is < 0.0 or score > 1.0 then its a "Bad score."
+  print("Bad score")
+
+elif score >= 0.9:
+  print("A")
+
+elif score >= 0.8:
+  print("B")
+
+elif score >= 0.7:
+  print("C")
+
+elif score >= 0.6:
+  print("D")
+
+else:
+  print("F")
