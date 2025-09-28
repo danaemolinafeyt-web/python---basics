@@ -1,1 +1,101 @@
+# Drill 1: positive or Negatice
 
+# Ask for a number
+
+num = float(input("Enter a number: "))
+
+# TODO: if num is >= 0 -> print (positive)
+# else -> print("Negative")
+
+if num >= 0:
+  print("Positive")
+
+else:
+  print("Negative")
+
+Output:
+Enter a number: 45
+Positive
+
+
+# Drill 2: Temperature Classifier
+
+# Ask for a temperature
+
+temp = float(input("Enter a Temperature: "))
+
+# TODO: if temp >= 85 -> print("Hot")
+# elif temp >= 60 -> print("Warm")
+# else -> print("Cold")
+
+if temp >= 85:
+  print("Hot")
+
+elif temp >= 60:
+  print("Warm")
+
+else:
+  print("Cold")
+
+Output:
+Enter a Temperature: 85
+Hot
+Enter a Temperature: 58
+Cold
+Enter a Temperature: 72
+Warm
+
+
+
+# Drill 3: Both Positive vs At Least One Negative
+
+# Ask for two numbers
+
+a = float(input("Enter a number:"))
+b = float(input("Enter a second number: "))
+
+# TODO: if both numbers > 0 -> print("Both positive")
+# else -> print("At least one is negative")
+
+if a > 0 and b > 0:
+  print("Both positive")
+
+else:
+  print("At least one if negative.")
+
+Output:
+Enter a number:45
+Enter a second number: 90
+Both positive
+
+
+
+# Drill 4: Add Error Handling
+
+# Ask for two number
+
+a = input("Enter a number: ")
+b = input("Enter a second number: ")
+
+try:
+  # convert both to float
+  a = float(a)
+  b = float(b)
+
+except: 
+  print("Invalid numeric number")
+  quit()
+
+if a > 0 and b > 0:
+  print("Both positive")
+
+else:
+  print("At least one is negative")
+
+# TODO: if both > 0 -> print("Both positive")
+# else -> print("At least one is negative")
+
+Output:
+Enter a number: 10
+Enter a second number: 45
+Both positive
